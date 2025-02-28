@@ -20,5 +20,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 mkdir -p ~/.config/nvim/{_tmp,backup,colors}
 cp vimrc ~/.config/nvim/init.vim
 cp sierra ~/.config/nvim/colors/sierra.vim
-# $HOME/.local/bin/nvim +PlugInstall +qall
-# $HOME/.local/bin/nvim +CocInstall coc-tsserver +qall
+$HOME/.local/bin/nvim --headless +PlugInstall +qall
+
+# install coc extensions
+mkdir -p ~/.config/coc/extensions
+cd ~/.config/coc/extensions
+if [ ! -f package.json ]
+then
+  echo '{"dependencies":{}}'> package.json
+fi
+npm install coc-tsserver --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
