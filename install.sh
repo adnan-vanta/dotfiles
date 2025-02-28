@@ -10,4 +10,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 mkdir ~/.vim/{_tmp,backup,colors}
 cp vimrc ~/.vimrc
 cp sierra ~/.vim/colors/sierra.vim
-vim +PluginInstall +qall
+vim +PlugInstall +qall
