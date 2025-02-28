@@ -18,5 +18,7 @@ alias l='less'
 alias ..="cd .."
 alias ...="cd ../../.."
 
+export PATH=$PATH:$HOME/.local/bin
+
 # for ghostty + tmux
 export TERM=xterm-256color
