@@ -17,3 +17,5 @@ alias ll='ls -l'
 alias l='less'
 alias ..="cd .."
 alias ...="cd ../../.."
+
+export PATH=$PATH:$HOME/bin
