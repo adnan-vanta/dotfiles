@@ -20,5 +20,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 mkdir -p ~/.config/nvim/{_tmp,backup,colors}
 cp vimrc ~/.config/nvim/init.vim
 cp sierra ~/.config/nvim/colors/sierra.vim
-$HOME/.local/bin/nvim +PlugInstall +qall
-$HOME/.local/bin/nvim +CocInstall coc-tsserver +qall
+# $HOME/.local/bin/nvim +PlugInstall +qall
+# $HOME/.local/bin/nvim +CocInstall coc-tsserver +qall
