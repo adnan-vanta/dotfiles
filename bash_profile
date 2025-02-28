@@ -17,6 +17,7 @@ alias ll='ls -l'
 alias l='less'
 alias ..="cd .."
 alias ...="cd ../../.."
+alias vim="nvim"
 
 export PATH=$PATH:$HOME/.local/bin
 
