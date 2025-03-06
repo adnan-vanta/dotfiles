@@ -30,3 +30,6 @@ then
   echo '{"dependencies":{}}'> package.json
 fi
 npm install coc-tsserver --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+
+# claude code
+npm install -g @anthropic-ai/claude-code
