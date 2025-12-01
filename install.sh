@@ -33,3 +33,24 @@ npm install coc-tsserver --global-style --ignore-scripts --no-bin-links --no-pac
 
 # claude code
 npm install -g @anthropic-ai/claude-code
+
+
+# Create a script that will run on Cursor connection
+cat > ~/.install-cursor-extensions.sh << 'EOF'
+#!/bin/bash
+CURSOR_CLI=$(find ~/.cursor-server/cli/servers/Stable-*/server/bin -name "cursor-server" 2>/dev/null | head -n 1)
+
+if [ -n "$CURSOR_CLI" ]; then
+    "$CURSOR_CLI" --install-extension esbenp.prettier-vscode
+    "$CURSOR_CLI" --install-extension eamodio.gitlens
+    "$CURSOR_CLI" --install-extension typescriptteam.native-preview
+
+    # Remove this script after running once
+    rm ~/.install-cursor-extensions.sh
+fi
+EOF
+
+chmod +x ~/.install-cursor-extensions.sh
+
+# Add to bashrc to run on login
+echo '[ -f ~/.install-cursor-extensions.sh ] && ~/.install-cursor-extensions.sh' >> ~/.bashrc
