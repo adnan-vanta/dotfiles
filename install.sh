@@ -54,3 +54,17 @@ chmod +x ~/.install-cursor-extensions.sh
 
 # Add to bashrc to run on login
 echo '[ -f ~/.install-cursor-extensions.sh ] && ~/.install-cursor-extensions.sh' >> ~/.bashrc
+
+# Create nvim config directory if it doesn't exist
+mkdir -p ~/.config/nvim
+
+# Create coc-settings.json
+cat > ~/.config/nvim/coc-settings.json << 'EOF'
+{
+  "tsserver.log": "normal",
+  "tsserver.tsdk": "node_modules/typescript/lib",
+  "tsserver.maxTsServerMemory": 16384
+}
+EOF
+
+echo "✓ Created ~/.config/nvim/coc-settings.json"
