@@ -22,18 +22,11 @@ cp vimrc ~/.config/nvim/init.vim
 cp sierra ~/.config/nvim/colors/sierra.vim
 $HOME/.local/bin/nvim --headless +PlugInstall +qall
 
-# install coc extensions
-mkdir -p ~/.config/coc/extensions
-cd ~/.config/coc/extensions
-if [ ! -f package.json ]
-then
-  echo '{"dependencies":{}}'> package.json
-fi
-npm install coc-tsserver --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
-
 # claude code
 npm install -g @anthropic-ai/claude-code
 
+# tsgo
+npm install -g @typescript/native-preview
 
 # Create a script that will run on Cursor connection
 cat > ~/.install-cursor-extensions.sh << 'EOF'
@@ -61,9 +54,14 @@ mkdir -p ~/.config/nvim
 # Create coc-settings.json
 cat > ~/.config/nvim/coc-settings.json << 'EOF'
 {
-  "tsserver.log": "normal",
-  "tsserver.tsdk": "node_modules/typescript/lib",
-  "tsserver.maxTsServerMemory": 16384
+  "languageserver": {
+    "tsgo": {
+      "command": "tsgo",
+      "args": ["--lsp", "--stdio"],
+      "filetypes": ["typescript", "typescriptreact", "javascript", "javascriptreact"],
+      "rootPatterns": ["tsconfig.json", "jsconfig.json", ".git/"]
+    }
+  }
 }
 EOF
 

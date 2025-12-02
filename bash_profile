@@ -18,6 +18,7 @@ alias l='less'
 alias ..="cd .."
 alias ...="cd ../../.."
 alias vim="nvim"
+alias dc="docker compose"
 
 export PATH=$PATH:$HOME/.local/bin
 
