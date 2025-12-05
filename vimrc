@@ -70,6 +70,9 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 
+" ale - disable TypeScript/JavaScript linters (using tsgo via coc.nvim instead)
+let g:ale_linters = {'typescript': [], 'typescriptreact': [], 'javascript': [], 'javascriptreact': []}
+
 " From coc.vim
 " Give more space for displaying messages.
 set cmdheight=2

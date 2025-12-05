@@ -54,6 +54,7 @@ mkdir -p ~/.config/nvim
 # Create coc-settings.json
 cat > ~/.config/nvim/coc-settings.json << 'EOF'
 {
+	"tsserver.enable": false,
   "languageserver": {
     "tsgo": {
       "command": "tsgo",
