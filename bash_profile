@@ -24,3 +24,6 @@ export PATH=$PATH:$HOME/.local/bin
 
 # for ghostty + tmux
 export TERM=xterm-256color
+
+# fix for ona
+export LANG=en_US.UTF-8
