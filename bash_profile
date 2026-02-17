@@ -19,6 +19,7 @@ alias ..="cd .."
 alias ...="cd ../../.."
 alias vim="nvim"
 alias dc="docker compose"
+alias claude="claude --dangerously-skip-permissions"
 
 export PATH=$PATH:$HOME/.local/bin
 
