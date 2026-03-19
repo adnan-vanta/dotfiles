@@ -21,6 +21,17 @@ alias vim="nvim"
 alias dc="docker compose"
 alias claude="claude --dangerously-skip-permissions"
 
+# tmux + vanta + claude
+tmv() {
+  if tmux has-session -t vanta 2>/dev/null; then
+    tmux attach-session -t vanta
+  else
+    tmux new-session -d -s vanta
+    tmux send-keys -t vanta 'claude' Enter
+    tmux attach-session -t vanta
+  fi
+}
+
 export PATH=$PATH:$HOME/.local/bin
 
 # for ghostty + tmux
