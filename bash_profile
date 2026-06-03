@@ -20,6 +20,8 @@ alias ...="cd ../../.."
 alias vim="nvim"
 alias dc="docker compose"
 alias claude="claude --dangerously-skip-permissions"
+alias gvim='vim $(git status --porcelain | sed "s/^...//" | sed "s/.* -> //" | sort -u)'
+alias gfmt='git diff --cached --name-only --diff-filter=d | xargs -r yarn oxfmt --write'
 
 # tmux + vanta + claude
 tmv() {
